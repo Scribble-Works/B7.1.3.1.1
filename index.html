@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fraction Fixer Challenge - Open Input</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="game-container">
+        
+        <div id="game-screen">
+            <h1>➕➖ Fraction Fixer Challenge</h1>
+            <p class="objective">Objective B7.1.3.2.1: Add or Subtract Unlike and Mixed Fractions.</p>
+            
+            <div class="header-stats">
+                <div>Score: <span id="score-tracker">0</span></div>
+                <div>Question: <span id="question-counter">0</span> / 20</div>
+            </div>
+
+            <div class="problem-area">
+                <p>Calculate the result (in simplest form or as a mixed fraction):</p>
+                <div id="fraction-problem" class="problem-display">?</div>
+            </div>
+            
+            <p id="prompt-text">Click the button to begin the challenge!</p>
+
+            <div id="answer-input-area" style="display: none; margin-bottom: 20px;">
+                <label for="user-answer">Your Answer (Example: 1 1/2 or 3/4 or 5):</label>
+                <input type="text" id="user-answer" placeholder="Enter simplified answer here (e.g., 1 1/2)" autocomplete="off">
+                <button id="submit-button" class="submit-button">Submit Answer</button>
+            </div>
+
+            <div id="feedback-area" class="feedback">Ready to test your skills?</div>
+            
+            <button id="start-button">Start Challenge</button>
+            
+            <button id="next-button" style="display: none;">Next Question</button>
+        </div>
+
+        <div id="results-screen" class="results-screen">
+            <h2>🥳 Challenge Complete!</h2>
+            <p>You finished 20 questions. Your final score is:</p>
+            <div id="final-score-display" class="score-final"></div>
+            <p id="celebration-message">Great effort!</p>
+            <button class="restart-button" onclick="window.location.reload()">Restart Challenge</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

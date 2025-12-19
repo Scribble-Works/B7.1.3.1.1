@@ -3,50 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fraction Fixer Challenge - Open Input</title>
+    <title>Benchmark Fractions</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-    <div class="game-container">
+    <!-- Start Screen -->
+    <div id="start-screen" class="screen">
+        <h1>Benchmark Fractions</h1>
+        <p class="subtitle">Tenths • Fifths • Fourths • Thirds • Halves</p>
         
-        <div id="game-screen">
-            <h1>➕➖ Fraction Fixer Challenge</h1>
-            <p class="objective">Objective B7.1.3.2.1: Add or Subtract Unlike and Mixed Fractions.</p>
-            
-            <div class="header-stats">
-                <div>Score: <span id="score-tracker">0</span></div>
-                <div>Question: <span id="question-counter">0</span> / 20</div>
-            </div>
-
-            <div class="problem-area">
-                <p>Calculate the result (in simplest form or as a mixed fraction):</p>
-                <div id="fraction-problem" class="problem-display">?</div>
-            </div>
-            
-            <p id="prompt-text">Click the button to begin the challenge!</p>
-
-            <div id="answer-input-area" style="display: none; margin-bottom: 20px;">
-                <label for="user-answer">Your Answer (Example: 1 1/2 or 3/4 or 5):</label>
-                <input type="text" id="user-answer" placeholder="Enter simplified answer here (e.g., 1 1/2)" autocomplete="off">
-                <button id="submit-button" class="submit-button">Submit Answer</button>
-            </div>
-
-            <div id="feedback-area" class="feedback">Ready to test your skills?</div>
-            
-            <button id="start-button">Start Challenge</button>
-            
-            <button id="next-button" style="display: none;">Next Question</button>
+        <!-- Learning Objective -->
+        <div class="objective">
+            <h2>B7.1.3.1.1</h2>
+            <p>Determine and recall the percentages and decimals of given benchmark fractions (tenths, fifths, fourths, thirds, and halves) and use these to compare quantities.</p>
         </div>
+        
+        <!-- Game Rules -->
+        <div class="rules">
+            <h2>How to Play</h2>
+            <ol>
+                <li>You'll be given 10 questions about benchmark fractions</li>
+                <li>Convert fractions to decimals and percentages</li>
+                <li>Compare quantities using your knowledge of benchmark fractions</li>
+                <li>Select the correct answer from the options provided</li>
+                <li>Complete all 10 questions to see your final score</li>
+            </ol>
+        </div>
+        
+        <button id="start-btn" class="btn">Start Activity</button>
+    </div>
 
-        <div id="results-screen" class="results-screen">
-            <h2>🥳 Challenge Complete!</h2>
-            <p>You finished 20 questions. Your final score is:</p>
-            <div id="final-score-display" class="score-final"></div>
-            <p id="celebration-message">Great effort!</p>
-            <button class="restart-button" onclick="window.location.reload()">Restart Challenge</button>
+    <!-- Quiz Screen -->
+    <div id="quiz-screen" class="screen hidden">
+        <div class="header">
+            <div class="score">Question: <span id="question-count">1</span>/10</div>
+        </div>
+        
+        <div class="question-container">
+            <h2 id="question-text">Question will appear here</h2>
+            <div class="options">
+                <button class="option-btn" data-choice="0"></button>
+                <button class="option-btn" data-choice="1"></button>
+                <button class="option-btn" data-choice="2"></button>
+                <button class="option-btn" data-choice="3"></button>
+            </div>
         </div>
     </div>
+
+    <!-- Game Over Screen -->
+    <div id="game-over-screen" class="screen hidden">
+        <h1>Activity Complete!</h1>
+        <div class="result">
+            <p>You answered <span id="score"></span> out of 10 questions correctly!</p>
+            <div class="feedback" id="feedback-message"></div>
+        </div>
+        <button id="restart-btn" class="btn">Try Again</button>
+    </div>
+
+    <!-- Sound Effects -->
+    <audio id="correctSound" src="assets/brass-fanfare-reverberated-146263.mp3"></audio>
+    <audio id="incorrectSound" src="assets/cartoon-fail-trumpet-278822.mp3"></audio>
 
     <script src="script.js"></script>
 </body>
